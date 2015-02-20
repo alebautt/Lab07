@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <googlemaps/googlemaps.h>
 
 
 @interface AppDelegate ()
@@ -18,17 +19,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [GMSServices provideAPIKey:@"AIzaSyCCvr4z6JunvUhX8AA90emO5j24AYPvoIY"];
     
-    
-    [Parse enableLocalDatastore];
+    //[Parse enableLocalDatastore];
     
     // Initialize Parse.
-    [Parse setApplicationId:@"3cIBROunw6yFNMmopsD2ePbRG7BqqZNLjOsDjfCK"
-                  clientKey:@"qdiOBZnKgGm7MYTz39JjCd2PtkoJYOVZGcX2gs2j"];
+    //[Parse setApplicationId:@"3cIBROunw6yFNMmopsD2ePbRG7BqqZNLjOsDjfCK"
+      //            clientKey:@"qdiOBZnKgGm7MYTz39JjCd2PtkoJYOVZGcX2gs2j"];
     
     // [Optional] Track statistics around application opens.
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+   // [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     
     

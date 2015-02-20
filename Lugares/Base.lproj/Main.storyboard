@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu-->
         <scene sceneID="PQt-js-HAq">
             <objects>
-                <viewController id="lDa-cT-BHZ" sceneMemberID="viewController">
+                <viewController id="lDa-cT-BHZ" customClass="Menu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ymy-kC-vnF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,17 +21,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="MpH-CP-fBh">
-                                <rect key="frame" x="126" y="184" width="123" height="29"/>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kfA-Ek-nPM" userLabel="ADBannerView">
+                                <rect key="frame" x="0.0" y="617" width="377" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </adBannerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D3w-fF-bT3" userLabel="btnListado">
+                                <rect key="frame" x="58" y="202" width="104" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Lista"/>
-                                    <segment title="Mapa"/>
-                                </segments>
+                                <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <state key="normal" title="Listado">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="kNG-Dp-XGW" kind="modal" id="YBB-qZ-8qU"/>
+                                    <segue destination="kNG-Dp-XGW" kind="modal" identifier="segueList" id="4VV-vQ-WoX"/>
                                 </connections>
-                            </segmentedControl>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hdy-Sx-doJ" userLabel="btnMapa">
+                                <rect key="frame" x="176" y="202" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <state key="normal" title="Mapa">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="9lf-3o-E89" kind="modal" identifier="segueMaps" id="DY1-an-8r8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -41,10 +56,35 @@
             </objects>
             <point key="canvasLocation" x="-716.5" y="285.5"/>
         </scene>
-        <!--Home-->
+        <!--Maps-->
+        <scene sceneID="hP8-Mj-sk0">
+            <objects>
+                <viewController id="9lf-3o-E89" customClass="Maps" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TqN-VH-Qs4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Mhn-sH-k3I" userLabel="view">
+                                <rect key="frame" x="5" y="43" width="375" height="329"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Irn-dd-br0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="view" destination="Mhn-sH-k3I" id="abf-qy-Bch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LES-p3-rU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-331.5" y="1027.5"/>
+        </scene>
+        <!--Listas-->
         <scene sceneID="IgE-az-l1G">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="kNG-Dp-XGW" customClass="Home" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="kNG-Dp-XGW" customClass="Listas" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uvY-Xo-4JY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,9 +156,20 @@
                                     <action selector="btnRefresh:" destination="kNG-Dp-XGW" eventType="touchUpInside" id="VzX-SQ-XGD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D3b-Xy-2Xd" userLabel="btnBack">
+                                <rect key="frame" x="-12" y="14" width="84" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lDa-cT-BHZ" kind="modal" identifier="segueMenu" id="Dd9-CA-XJd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="b0Q-a4-Snl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="7fx-mY-MMs" id="fjo-Lr-AQH"/>
@@ -264,7 +315,7 @@
     </scenes>
     <resources>
         <image name="add2.png" width="128" height="128"/>
-        <image name="back.png" width="128" height="128"/>
+        <image name="back.png" width="12" height="12"/>
         <image name="refresh-128.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -273,6 +324,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="YBB-qZ-8qU"/>
+        <segue reference="4VV-vQ-WoX"/>
     </inferredMetricsTieBreakers>
 </document>
