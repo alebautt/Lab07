@@ -1,4 +1,4 @@
-//
+
 //  ViewController.m
 //  Lugares
 //
@@ -7,9 +7,9 @@
 //
 
 #import "Add.h"
+UIAlertView *alert;
 
 @interface Add ()
-
 @end
 
 @implementation Add
@@ -33,13 +33,21 @@
     testObject[@"url"] = self.txtUrl.text;
     testObject[@"time"] = self.txtTime.text;
     if([testObject saveInBackground]){
-        NSLog(@"Se ha guardado correctamente el registro en parse");
         self.txtName.text=@"";
         self.txtLatitude.text=@"";
         self.txtLongitude.text=@"";
         self.txtTime.text=@"";
         self.txtUrl.text=@"";
+        [self msgAlert];
     }
 }
 
+-(void) msgAlert{
+    alert = [[UIAlertView alloc] initWithTitle:@"Alerta del sistema"
+                                       message: @"Guardado correctamente"
+                                      delegate:self
+                                    cancelButtonTitle:@"Aceptar"
+                                    otherButtonTitles:nil];
+    [alert show];
+}
 @end
