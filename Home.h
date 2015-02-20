@@ -21,4 +21,7 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+- (IBAction)btnRefresh:(id)sender;
+- (IBAction)button:(id)sender;
+
 @end

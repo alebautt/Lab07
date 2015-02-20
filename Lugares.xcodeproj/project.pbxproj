@@ -39,6 +39,9 @@
 		B0E3751E1A95F7110092D9FF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E3751D1A95F7110092D9FF /* iAd.framework */; };
 		B0E375211A960F870092D9FF /* CellResults.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E375201A960F870092D9FF /* CellResults.m */; };
 		B0E375241A96AF740092D9FF /* Lista.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E375231A96AF740092D9FF /* Lista.m */; };
+		B0E375261A96BDE40092D9FF /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E375251A96BDE40092D9FF /* refresh.png */; };
+		B0E375281A96C2D00092D9FF /* add2.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E375271A96C2D00092D9FF /* add2.png */; };
+		B0E3752A1A96C30A0092D9FF /* refresh-128.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E375291A96C30A0092D9FF /* refresh-128.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		B0E375201A960F870092D9FF /* CellResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellResults.m; path = ../CellResults.m; sourceTree = "<group>"; };
 		B0E375221A96AF740092D9FF /* Lista.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lista.h; path = ../Lista.h; sourceTree = "<group>"; };
 		B0E375231A96AF740092D9FF /* Lista.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lista.m; path = ../Lista.m; sourceTree = "<group>"; };
+		B0E375251A96BDE40092D9FF /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = SOURCE_ROOT; };
+		B0E375271A96C2D00092D9FF /* add2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add2.png; sourceTree = SOURCE_ROOT; };
+		B0E375291A96C30A0092D9FF /* refresh-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh-128.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +209,9 @@
 		B0A5E2F51A95C87000024DC3 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				B0E375291A96C30A0092D9FF /* refresh-128.png */,
+				B0E375271A96C2D00092D9FF /* add2.png */,
+				B0E375251A96BDE40092D9FF /* refresh.png */,
 				B0A5E3231A95E32700024DC3 /* add.png */,
 				B0A5E2F61A95C8BB00024DC3 /* back.png */,
 			);
@@ -325,6 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0A5E2F71A95C8BB00024DC3 /* back.png in Resources */,
+				B0E3752A1A96C30A0092D9FF /* refresh-128.png in Resources */,
+				B0E375261A96BDE40092D9FF /* refresh.png in Resources */,
+				B0E375281A96C2D00092D9FF /* add2.png in Resources */,
 				B0A5E2DB1A95C3D500024DC3 /* Main.storyboard in Resources */,
 				B0A5E2E01A95C3D500024DC3 /* LaunchScreen.xib in Resources */,
 				B0A5E3241A95E32700024DC3 /* add.png in Resources */,

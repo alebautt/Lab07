@@ -22,17 +22,13 @@
     [self cfgiAdBanner];
     
     // Do any additional setup after loading the view.
-    PFQuery *query =[PFQuery queryWithClassName:@"Lugares"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    /* PFQuery *query =[PFQuery queryWithClassName:@"Lugares"];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (id object in objects) {
-         
-        //    NSLog(@"%@",object[@"name"]);
-         //   lblName.text = [tempObject objectForKey:@"name"];
-            
-
-            
+        NSLog(@"%@",object[@"name"]);
+        lblName.text = [tempObject objectForKey:@"name"];
         }
-    }];
+     }];*/
 
     [self performSelector:@selector(retrieveFromParse)];
 }
@@ -40,10 +36,9 @@
 -(void) retrieveFromParse{
     PFQuery *query =[PFQuery queryWithClassName:@"Lugares"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-         if (!error) {
+        if (!error)
+        {
           arrayLugares = [[NSArray alloc] initWithArray:objects];
-        //  NSLog(@"holaaaa %@",arrayLugares);
-
         }
         [tableView reloadData];
     }];
@@ -54,28 +49,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return arrayLugares.count;
+  return arrayLugares.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 104;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"CellResults";
-    
     CellResults *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     PFObject *tempObject = [arrayLugares objectAtIndex:indexPath.row];
-  
-   // NSLog(@"estoy por imprimir");
-   cell.lblName.text = [tempObject objectForKey:@"name"];
-    //cell.lblName.text = @"hello estoy capturando autom";
+    cell.lblName.text = [tempObject objectForKey:@"name"];
     return cell;
 }
-
-
 
 -(void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -83,7 +71,7 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+//    [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
@@ -154,4 +142,15 @@
 //___________________________________________
 
 
+- (IBAction)btnRefresh:(id)sender {
+    [self performSelector:@selector(retrieveFromParse)];
+    
+    [tableView reloadData];
+    
+}
+
+- (IBAction)button:(id)sender {
+ 
+
+}
 @end
